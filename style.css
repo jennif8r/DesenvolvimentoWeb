@@ -1,0 +1,192 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: white;
+    background-color: #09090a;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima para ocupar a tela inteira */
+}
+
+/* Header */
+header {
+    background: #1c1c1d;
+    color: #09090a;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main */
+main {
+    flex: 1; /* Ocupa o espaço disponível */
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #1c1c1d;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Garante que o footer seja empurrado para o final */
+}
+
+/* Links */
+a {
+    color: #0f1418;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    text-decoration:none;
+    color: #05020c;
+    transform: scale(1.05);
+}
+
+/* Estilo do formulário */
+form {
+    background: #09090a; /* Fundo escuro */
+    padding: 2rem;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    max-width: 500px;
+    margin: 2rem auto;
+    position: relative; /* Para efeito de luzes */
+    overflow: hidden;
+}
+
+/* Estilo dos campos de input */
+form label {
+    color: #f2f2f2;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input, 
+form textarea, 
+form button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efeito ao focar */
+form input:focus, 
+form textarea:focus {
+    box-shadow: 0 0 10px rgba(130, 55, 243, 0.8);
+    transform: scale(1.02);
+}
+
+/* Estilo do botão */
+form button {
+    background-color: #3b0d69;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #4a397b;
+    transform: scale(1.05);
+}
+
+/* Efeito de luzes animadas */
+form::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    animation: spin 10s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+form::after {
+    content: '';
+    position: absolute;
+    top: 200%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(20, 21, 22, 0.2), transparent);
+    animation: spin-reverse 15s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+form > * {
+    position: relative;
+    z-index: 1; /* Para ficar acima do efeito de luz */
+}
+
+/* Animação de luzes */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-reverse {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.sobre-mim {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #09090a;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
